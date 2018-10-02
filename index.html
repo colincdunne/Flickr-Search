@@ -1,0 +1,82 @@
+<!--
+Author: Colin Dunne
+Student ID: R00115734
+Class: COM3
+Email: colin.c.dunne@mycit.ie
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Assignment 2 | Colin Dunne | R00115734 | colin.c.dunne@mycit.ie</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/css.css" media="screen" />
+	<script type="text/javascript" src="js/javascript.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxnyDyGg45eKlMipnvjZz0I_cvo2E5BcU&callback=load_map"></script>
+</head>
+<body>
+
+<div id="header">
+</div>
+<div class="colmask leftmenu">
+	<div class="colleft">
+		<div class="col1" style="border-radius: 25px;">
+			<div id="carousel">
+				<div id="middle"></div>
+				<div onclick="myFunction()" id="left_btn">
+					<br />
+					<br />
+                    &nbsp;&nbsp;←
+					<br />
+                    &nbsp;&nbsp;←
+				</div>
+				<div onclick="myFunctionP()" id="right_btn">
+					<br >
+					<br >
+                    &nbsp;&nbsp;→
+					<br >
+                    &nbsp;&nbsp;→
+				</div>
+			</div>
+
+			<div id="display" style="height: 450px; margin-top: 25px;">
+			</div>
+		</div>
+
+
+		<div class="col2">
+			<!-- Column 2 start -->
+			<h2>Location</h2>
+			<select id="location" name="location" onchange="initialize_gmap(this.value);">
+				<option value="51.8968917,-8.486315699999977">Cork City, Ireland</option>
+				<option value="52.520008,13.404954">Berlin, Germany</option>
+				<option value="51.508530,-0.076132">London, UK</option>
+				<option value="35.685360,139.753372">Tokyo, Japan</option>
+				<option value="28.644800,77.21672">Delhi, India</option>
+			</select>
+
+			<h2>Tags</h2>
+			<input type="text" name="tag" value="" id="id0">
+			<div id="outField"><br></div>
+            <Br>
+			<button onclick="addInputButton()" id="addBtn"> Add Tag </button>
+
+			<div id="ads" style="margin-top: 25px;">
+				<button onclick="retrievePhotos()" id="flickrB" value="search">Search Flickr</button>
+			</div>
+
+			<div id="map" style="margin-top: 25px; height:250px; border: 1px solid red;">
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+	function load_map() {
+		var line = document.getElementById("location").value;
+		initialize_gmap(line);
+	}
+</script>
+</body>
+</html>
